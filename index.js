@@ -1,4 +1,5 @@
 import config from "config";
+import express from "express";
 
 import httpService from "./lib/http/server";
 import app from "./lib/app";
@@ -28,14 +29,15 @@ function startHttpServer()
     });
 }
 
+
 function checkEnvironment()
 {
     const env = app.get("env");
+    console.log(`Server is now started in ${env}`);
 
     if ( env === "development")
     {
-        console.log(`Server is now started in ${env}`);
-
+        app.use(express.static("public"));
     }
     else 
     {
