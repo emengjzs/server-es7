@@ -41,7 +41,7 @@ function checkEnvironment()
     }
     else 
     {
-        throw new Error(`Unsupport deployment mode ${env}`);
+        // throw new Error(`Unsupport deployment mode ${env}`);
     }
 }
 
